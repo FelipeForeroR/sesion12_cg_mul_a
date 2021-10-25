@@ -51,7 +51,10 @@ function init() {
 
     Cubo = [];   	// Definir un array unidimensional
     dim = 4; 		//Dado que son cubos, todas sus medidas en el eje son iguales, así que use la variable dim para almacenar este valor.
-    ang = 45;
+    lad= dim/2;
+    diagonal= Math.sqrt(Math.pow(lad, 2)+ Math.pow(lad, 2));
+    valor= diagonal-lad;
+    Angulo = (Math.PI/4);
 	
     Cubo.push(cubo(dim, dim, dim, 0xFFDD00, 'Physical', false));
     Cubo.push(cubo(dim, dim, dim, 0xFF5733, 'Phong', false));
@@ -72,9 +75,9 @@ function init() {
     Cubo[1].scale.set(0.5, 0.5, 0.5)
     Cubo[2].scale.set(0.25, 0.25, 0.25)
 
-    Cubo[0].rotateY(ang)
-    Cubo[1].rotateY(ang*2)
-    Cubo[2].rotateY(ang*3)
+    Cubo[0].rotateY(Angulo)
+
+    Cubo[2].rotateY(Angulo)
 
     // position and point the camera to the center of the scene
     camera.position.set(dim*4, dim*4, dim*4);
